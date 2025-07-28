@@ -1,0 +1,296 @@
+{
+    "surgeries":
+    [ 
+        {
+            "title": "Masculinising Surgeries",
+            "list":
+            [
+                {
+                    "title": "Mastectomy",
+                    "type": "Top Surgery",
+                    "summary": "A (double) mastectomy is...",
+                    "ot_considerations": [
+                        {
+                            "title": "Pre-Surgery Considerations",
+                            "short_title": "Pre-Surgery",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Journey to/from Surgery",
+                            "short_title": "Journey",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Post-Operative Precautions",
+                            "short_title": "Post-Op",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Lifelong Changes",
+                            "short_title": "Lifelong",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        }
+
+                    ]
+                },
+                {
+                    "title": "Phalloplasty",
+                    "summary": "A phalloplasty is...",
+                    "type": "Bottom Surgery",
+                    "ot_considerations": [
+                        {
+                            "title": "Pre-Surgery Considerations",
+                            "short_title": "Pre-Surgery",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Journey to/from Surgery",
+                            "short_title": "Journey",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Post-Operative Precautions",
+                            "short_title": "Post-Op",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Lifelong Changes",
+                            "short_title": "Lifelong",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        }
+
+                    ]
+                },
+                {
+                    "title": "Metoidioplasty",
+                    "summary": "A metoidioplasty is...",
+                    "type": "Bottom Surgery",
+                    "ot_considerations": [
+                        {
+                            "title": "Pre-Surgery Considerations",
+                            "short_title": "Pre-Surgery",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Journey to/from Surgery",
+                            "short_title": "Journey",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Post-Operative Precautions",
+                            "short_title": "Post-Op",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Lifelong Changes",
+                            "short_title": "Lifelong",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        }
+
+                    ]
+                },
+                {
+                    "title": "Scrotoplasty",
+                    "summary": "A scrotoplasty is...",
+                    "type": "Bottom Surgery",
+                    "ot_considerations": [
+                        {
+                            "title": "Pre-Surgery Considerations",
+                            "short_title": "Pre-Surgery",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Journey to/from Surgery",
+                            "short_title": "Journey",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Post-Operative Precautions",
+                            "short_title": "Post-Op",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Lifelong Changes",
+                            "short_title": "Lifelong",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        }
+
+                    ]
+                },
+                {
+                    "title": "Hysterectomy",
+                    "summary": "A hysterectomy is...",
+                    "type": "Bottom Surgery",
+                    "ot_considerations": [
+                        {
+                            "title": "Pre-Surgery Considerations",
+                            "short_title": "Pre-Surgery",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Journey to/from Surgery",
+                            "short_title": "Journey",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Post-Operative Precautions",
+                            "short_title": "Post-Op",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Lifelong Changes",
+                            "short_title": "Lifelong",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        }
+
+                    ]
+                },
+                {
+                    "title": "Salpingo-Oophorectomy",
+                    "summary": "A salpingo-oopherectomy is...",
+                    "type": "Bottom Surgery",
+                    "ot_considerations": [
+                        {
+                            "title": "Pre-Surgery Considerations",
+                            "short_title": "Pre-Surgery",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Journey to/from Surgery",
+                            "short_title": "Journey",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Post-Operative Precautions",
+                            "short_title": "Post-Op",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Lifelong Changes",
+                            "short_title": "Lifelong",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        }
+
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Feminising Surgeries",
+            "list": [
+                {
+                    "title": "Breast augmentation",
+                    "summary": "Breast augmentation is...",
+                    "type": "Top Surgery",
+                    "ot_considerations": [
+                        {
+                            "title": "Pre-Surgery Considerations",
+                            "short_title": "Pre-Surgery",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Journey to/from Surgery",
+                            "short_title": "Journey",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Post-Operative Precautions",
+                            "short_title": "Post-Op",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Lifelong Changes",
+                            "short_title": "Lifelong",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        }
+
+                    ]
+                },
+                {
+                    "title": "Vaginoplasty",
+                    "summary": "A vaginoplasty is...",
+                    "type": "Bottom Surgery",
+                    "ot_considerations": [
+                        {
+                            "title": "Pre-Surgery Considerations",
+                            "short_title": "Pre-Surgery",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Journey to/from Surgery",
+                            "short_title": "Journey",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Post-Operative Precautions",
+                            "short_title": "Post-Op",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Lifelong Changes",
+                            "short_title": "Lifelong",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        }
+
+                    ]
+                },
+                {
+                    "title": "Vulvoplasty",
+                    "summary": "A vulvoplasty is...",
+                    "type": "Bottom Surgery",
+                    "ot_considerations": [
+                        {
+                            "title": "Pre-Surgery Considerations",
+                            "short_title": "Pre-Surgery",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Journey to/from Surgery",
+                            "short_title": "Journey",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Post-Operative Precautions",
+                            "short_title": "Post-Op",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Lifelong Changes",
+                            "short_title": "Lifelong",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        }
+
+                    ]
+                },
+                {
+                    "title": "Orchiectomy",
+                    "summary": "An orchiectomy is...",
+                    "type": "Bottom Surgery",
+                    "ot_considerations": [
+                        {
+                            "title": "Pre-Surgery Considerations",
+                            "short_title": "Pre-Surgery",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Journey to/from Surgery",
+                            "short_title": "Journey",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Post-Operative Precautions",
+                            "short_title": "Post-Op",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        },
+                        {
+                            "title": "Lifelong Changes",
+                            "short_title": "Lifelong",
+                            "contents": "# Lorem ipsum \n dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
+                        }
+
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,14 +1,26 @@
-import { Text, View } from "react-native";
 import * as React from 'react';
+import { View } from 'react-native';
 import {
   MD3LightTheme as DefaultTheme,
-  PaperProvider,
-  Button
+  PaperProvider
 } from 'react-native-paper';
-// import '@fontsource/roboto/300.css';
-// import '@fontsource/roboto/400.css';
-// import '@fontsource/roboto/500.css';
-// import '@fontsource/roboto/700.css';
+import SurgeryTypeSection from '@/components/SurgeryTypeSection';
+
+const data = require('@/constants/ApplicationData.json')
+
+export default function Index() {
+  return (
+    <PaperProvider theme={theme}>
+      <View
+        style={{
+          alignItems: "stretch",
+        }}
+      >
+        <SurgeryTypeSection title={data.surgeries[0].title} list={data.surgeries[0].list}/>
+      </View>
+    </PaperProvider>
+  );
+}
 
 const theme = {
   ...DefaultTheme,
@@ -18,19 +30,3 @@ const theme = {
     secondary: '#006471',
   },
 };
-
-export default function Index() {
-  return (
-    <PaperProvider theme={theme}>
-      <View
-        style={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <Button mode="contained">Hello world</Button>
-      </View>
-    </PaperProvider>
-  );
-}
