@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
     padding: 15,
   },
   ".SurgeryTypeSectionTitleView": {
-    padding: 10,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
     flexDirection: "row",
     alignItems: "center"
   },

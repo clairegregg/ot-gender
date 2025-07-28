@@ -21,6 +21,6 @@ export function SurgeryType({title, type}: SurgeryTypeProps) {
 
 const styles = StyleSheet.create({
   ".SurgeryTypeCard": {
-    marginVertical: 7
+    marginVertical: 5
   }
 });
