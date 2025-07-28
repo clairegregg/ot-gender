@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import {
   MD3LightTheme as DefaultTheme,
   PaperProvider,
@@ -12,6 +12,12 @@ const lightTheme = require('@/assets/themes/light.json')
 const darkTheme = require('@/assets/themes/dark.json')
 
 export default function Index() {
+  let surgeryTypeSections = data.surgeries.map((surgeryType: any) =>
+  {
+      return (
+          <SurgeryTypeSection title={surgeryType.title} list={surgeryType.list} key={surgeryType.title}/>
+      )
+  });
   return (
     <PaperProvider theme={theme}>
       <View style={{ backgroundColor: theme.colors.surface, flex: 1}}>
@@ -20,7 +26,9 @@ export default function Index() {
           <Appbar.Content title="NGS" />
           <Appbar.Action icon="cancel" onPress={() => {}} />
         </Appbar.Header>
-        <SurgeryTypeSection title={data.surgeries[0].title} list={data.surgeries[0].list}/>
+        <ScrollView>
+          { surgeryTypeSections }
+        </ScrollView>
       </View>
     </PaperProvider>
   );
