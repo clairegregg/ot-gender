@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import { Text } from 'react-native-paper';
+import { Text, IconButton, Icon } from 'react-native-paper';
 import { SurgeryType } from '@/components/SurgeryType'
 
 export interface SurgeryTypeSectionProps {
@@ -18,7 +18,10 @@ export default function SurgeryTypeSection({title, list}: SurgeryTypeSectionProp
 
     return (
         <View style={styles['.SurgeryTypeSection']}>
-            <Text variant="titleLarge">{title}</Text>
+            <View style={styles['.SurgeryTypeSectionTitleView']}>
+                <Text variant="titleLarge" style={styles['.SurgeryTypeSectionTitle']}>{title}</Text>
+                <IconButton icon="triangle-small-down" onPress={() => console.log('Pressed')}/>
+            </View>
             { surgeryTypes }
         </View>
     );
@@ -26,9 +29,17 @@ export default function SurgeryTypeSection({title, list}: SurgeryTypeSectionProp
 
 const styles = StyleSheet.create({
   ".SurgeryTypeSection": {
-    display: "flex", 
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "stretch"
+    alignItems: "stretch",
+    padding: 15,
+  },
+  ".SurgeryTypeSectionTitleView": {
+    padding: 10,
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  ".SurgeryTypeSectionTitle": {
+    fontWeight: "bold",
   },
 });

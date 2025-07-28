@@ -1,5 +1,6 @@
 
 import * as React from 'react';
+import { StyleSheet } from 'react-native';
 import { Card, Text } from 'react-native-paper';
 
 interface SurgeryTypeProps {
@@ -9,7 +10,7 @@ interface SurgeryTypeProps {
 
 export function SurgeryType({title, type}: SurgeryTypeProps) {
     return (
-        <Card mode="outlined">
+        <Card mode="outlined" style={styles['.SurgeryTypeCard']}>
             <Card.Content>
             <Text variant="titleLarge">{title}</Text>
             <Text variant="bodyMedium">{type}</Text>
@@ -17,3 +18,9 @@ export function SurgeryType({title, type}: SurgeryTypeProps) {
         </Card>
     );
 }
+
+const styles = StyleSheet.create({
+  ".SurgeryTypeCard": {
+    marginVertical: 7
+  }
+});
