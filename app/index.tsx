@@ -7,6 +7,7 @@ import {
 } from 'react-native-paper';
 import SurgeryTypeSection from '@/components/SurgeryTypeSection';
 
+
 const data = require('@/constants/ApplicationData.json')
 const lightTheme = require('@/assets/themes/light.json')
 const darkTheme = require('@/assets/themes/dark.json')
