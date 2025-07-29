@@ -15,7 +15,7 @@ export function SurgeryType({title, type, genderType}: SurgeryTypeProps) {
     const router = useRouter();
     const theme = useTheme();
     return (
-        <TouchableHighlight onPress={() => {router.navigate(`/otsupports?surgeryName=${title}&?surgeryType=${genderType}`)}} 
+        <TouchableHighlight onPress={() => {router.navigate(`/otsupports?surgeryName=${title}&surgeryType=${genderType}`)}} 
             style={{ flex:1}} underlayColor={theme.colors.surface}>
         <Card mode="contained" style={styles['.SurgeryTypeCard']} >
             <Card.Content>
