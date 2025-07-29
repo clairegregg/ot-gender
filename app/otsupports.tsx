@@ -29,10 +29,8 @@ export default function OtSupports() {
     const router = useRouter()
     // TODO: Remove surgeryType as a parameter here, if a surgery is masculinising or feminising should not matter. Should be fixed with proper data structure
     const { surgeryName, surgeryType } = useLocalSearchParams<{surgeryName: string, surgeryType: string}>()
-    const otReccomendation = data.surgeries[0].list[0].ot_considerations[0]
-
+    
     let surgery: any;
-
     // TODO: remove with improved data structure
     for (let typeSection of data.surgeries){
       if (typeSection.title === surgeryType){
@@ -44,7 +42,6 @@ export default function OtSupports() {
       } 
     };
 
-    // // TODO: add summary somewhere
     let tabs = surgery.ot_considerations.map(({title, short_title, contents}: otConsideration) =>
       {
           return (
@@ -53,6 +50,12 @@ export default function OtSupports() {
               </TabScreen> 
           )
       });
+    // Add summary before
+    tabs.unshift(
+      <TabScreen label="Summary" key="Summary">
+        <OtReccomendationsScreen recommendationType={"Summary"} recommendations={surgery.summary}/>
+      </TabScreen> 
+    )
     
     return (
       <PaperProvider theme={theme}>
