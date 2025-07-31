@@ -7,15 +7,13 @@ import { Card, Text, TouchableRipple, useTheme } from 'react-native-paper';
 interface SurgeryTypeProps {
     title: string,
     type: string,
-    // TODO: remove with new data structure
-    genderType: string
 }
 
-export function SurgeryType({title, type, genderType}: SurgeryTypeProps) {
+export function SurgeryType({title, type}: SurgeryTypeProps) {
     const router = useRouter();
     const theme = useTheme();
     return (
-        <TouchableHighlight onPress={() => {router.navigate(`/otsupports?surgeryName=${title}&surgeryType=${genderType}`)}} 
+        <TouchableHighlight onPress={() => {router.navigate(`/otsupports?surgeryName=${title}`)}} 
             style={{ flex:1}} underlayColor={theme.colors.surface}>
         <Card mode="contained" style={styles['.SurgeryTypeCard']} >
             <Card.Content>

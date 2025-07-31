@@ -13,12 +13,23 @@ const lightTheme = require('@/assets/themes/light.json')
 const darkTheme = require('@/assets/themes/dark.json')
 
 export default function Index() {
-  let surgeryTypeSections = data.surgeries.map((surgeryType: any) =>
+  let sections: Map<string, any[]> = new Map();
+  for (let surgery of data.surgeries) {
+    if (sections.has(surgery.primary_association)){
+      sections.get(surgery.primary_association)?.push(surgery)
+    } else {
+      sections.set(surgery.primary_association, [surgery])
+    }
+  }
+
+  let surgeryTypeSections: React.JSX.Element[] = []
+  sections.forEach((surgery: any[], type: string) =>
   {
-      return (
-          <SurgeryTypeSection title={surgeryType.title} list={surgeryType.list} key={surgeryType.title}/>
+      surgeryTypeSections.push(
+          <SurgeryTypeSection title={type} list={surgery} key={type}/>
       )
   });
+  
   return (
     <PaperProvider theme={theme}>
       <View style={{ backgroundColor: theme.colors.surface, flex: 1}}>

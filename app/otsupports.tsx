@@ -27,18 +27,12 @@ type otConsideration = {
 
 export default function OtSupports() {
     const router = useRouter()
-    // TODO: Remove surgeryType as a parameter here, if a surgery is masculinising or feminising should not matter. Should be fixed with proper data structure
-    const { surgeryName, surgeryType } = useLocalSearchParams<{surgeryName: string, surgeryType: string}>()
+    const { surgeryName } = useLocalSearchParams<{surgeryName: string}>()
     
     let surgery: any;
-    // TODO: remove with improved data structure
-    for (let typeSection of data.surgeries){
-      if (typeSection.title === surgeryType){
-        for (let specificSurgery of typeSection.list) {
-          if (specificSurgery.title === surgeryName) {
-            surgery = specificSurgery
-          }
-        }
+    for (let specificSurgery of data.surgeries){
+      if (specificSurgery.name === surgeryName){  
+        surgery = specificSurgery
       } 
     };
 

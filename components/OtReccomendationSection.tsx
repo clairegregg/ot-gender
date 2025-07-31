@@ -1,13 +1,10 @@
-
-import { useRouter } from 'expo-router';
 import * as React from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
-import { Divider, Text, TouchableRipple, useTheme } from 'react-native-paper';
+import { Divider, Text } from 'react-native-paper';
 import Markdown, { ASTNode } from '@ronradtke/react-native-markdown-display';
 
 interface OtRecommendationsProp {
     recommendationType: string,
-    // TODO: remove with new data structure
     recommendations: string
 }
 

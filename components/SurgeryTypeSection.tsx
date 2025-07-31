@@ -11,8 +11,7 @@ export default function SurgeryTypeSection({title, list}: SurgeryTypeSectionProp
     let surgeryTypes = list.map((surgeryText) =>
     {
         return (
-            // TODO: remove title
-            <SurgeryType title={surgeryText.title} type={surgeryText.type} genderType={title} key={surgeryText.title}/>
+            <SurgeryType title={surgeryText.name} type={surgeryText.type} key={surgeryText.name}/>
         )
     });
 
