@@ -280,5 +280,31 @@
                 }
             ]
         }
+    ],
+    "welcome_dialogues": [
+        {
+            "title": "Welcome!",
+            "text": "This application aims to let you know about the surgeries available to you, and some considerations from our occupational therapists when it comes to planning around surgeries.",
+            "icons": []
+        },
+        {
+            "title": "What is Occupational Therapy?",
+            "text": "Occupational therapy and occupational therapists (OTs) work to help people live their lives to the fullest as they wish to, with a strongly client focused approach. Occupational therapy is used for both physical and non-physical situations.",
+            "icons": []
+        },
+        {
+            "title": "App Structure",
+            "text": "This app splits gender affirming surgeries into their primary applications - whether they tend to be used to masculinise or feminise. Inside these sections, you can see the different surgeries available, and click into them to get some information about them. Once clicked into a specific surgery, you can see a summary of the surgery, as well as some of the things to think about provided by our OTs. \n ",
+            "icons": []
+            
+        },
+        {
+            "title": "Using the App",
+            "text": "In the top bar you will sometimes see an information button (the icon on the left below), which you can click on to get this introduction again. In the top right corner of the application, you should always see a cancel button (the icon on the right below), which will immediately close the application.",
+            "icons": [
+                "information-outline",
+                "cancel"
+            ]
+        }
     ]
 }

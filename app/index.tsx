@@ -6,6 +6,7 @@ import {
   Appbar
 } from 'react-native-paper';
 import SurgeryTypeSection from '@/components/SurgeryTypeSection';
+import { IntroDialogue } from '@/components/IntroDialogue';
 
 
 const data = require('@/constants/ApplicationData.json')
@@ -29,15 +30,19 @@ export default function Index() {
           <SurgeryTypeSection title={type} list={surgery} key={type}/>
       )
   });
-  
+
+  const [dialogueVisible, setDialogueVisible] = React.useState(false);
+  const showDialog = () => setDialogueVisible(true);
+
   return (
     <PaperProvider theme={theme}>
       <View style={{ backgroundColor: theme.colors.surface, flex: 1}}>
         <Appbar.Header mode='center-aligned' elevated>
-          <Appbar.Action icon="menu" isLeading onPress={() => {}} />
+          <Appbar.Action icon="information-outline" isLeading onPress={showDialog} />
           <Appbar.Content title="NGS" />
           <Appbar.Action icon="cancel" onPress={() => {}} />
         </Appbar.Header>
+        <IntroDialogue visible={dialogueVisible} setVisible={setDialogueVisible}/>
         <ScrollView>
           { surgeryTypeSections }
         </ScrollView>
