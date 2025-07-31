@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, BackHandler, Platform, Linking } from 'react-native';
 import {
   MD3LightTheme as DefaultTheme,
   PaperProvider,
@@ -40,7 +40,13 @@ export default function Index() {
         <Appbar.Header mode='center-aligned' elevated>
           <Appbar.Action icon="information-outline" isLeading onPress={showDialog} />
           <Appbar.Content title="NGS" />
-          <Appbar.Action icon="cancel" onPress={() => {}} />
+          <Appbar.Action icon="cancel" onPress={() => {
+            if (Platform.OS === 'android') {
+              BackHandler.exitApp()
+            } else {
+              Linking.openURL("https://www.google.com")
+            }    
+          }} />
         </Appbar.Header>
         <IntroDialogue visible={dialogueVisible} setVisible={setDialogueVisible}/>
         <ScrollView>
