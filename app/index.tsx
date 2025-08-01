@@ -38,6 +38,16 @@ export default function Index() {
 
   return (
     <PaperProvider theme={theme}>
+      <React.Fragment>
+        {Platform.OS === 'web' ? (
+        <style type="text/css">{`
+          @font-face {
+            font-family: 'MaterialDesignIcons';
+            src: url(${require('@react-native-vector-icons/material-design-icons/fonts/MaterialDesignIcons.ttf')}) format('truetype');
+          }
+        `}</style>
+    ) : null}
+      </React.Fragment>
       <View style={{ backgroundColor: theme.colors.surface, flex: 1}}>
         <Appbar.Header mode='center-aligned' elevated>
           <Appbar.Action icon="information-outline" isLeading onPress={showDialog} />

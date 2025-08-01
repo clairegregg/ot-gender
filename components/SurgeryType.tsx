@@ -14,13 +14,13 @@ export function SurgeryType({title, type}: SurgeryTypeProps) {
     const theme = useTheme();
     return (
         <TouchableHighlight onPress={() => {router.navigate(`/otsupports?surgeryName=${title}`)}} 
-            style={{ flex:1}} underlayColor={theme.colors.surface}>
-        <Card mode="contained" style={styles['.SurgeryTypeCard']} >
-            <Card.Content>
-            <Text variant="titleMedium">{title}</Text>
-            <Text variant="bodyMedium">{type}</Text>
-            </Card.Content>
-        </Card>
+            style={{ flex:1, minWidth: 300}} underlayColor={theme.colors.surface}>
+            <Card mode="contained" style={styles['.SurgeryTypeCard']} >
+                <Card.Content>
+                <Text variant="titleMedium">{title}</Text>
+                <Text variant="bodyMedium">{type}</Text>
+                </Card.Content>
+            </Card>
         </TouchableHighlight>
     );
 }

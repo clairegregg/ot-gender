@@ -1,4 +1,5 @@
-import { StyleSheet, View } from 'react-native';
+import { View } from 'react-native';
+import StyleSheet from 'react-native-media-query';
 import { Text, IconButton, List, useTheme } from 'react-native-paper';
 import { SurgeryType } from '@/components/SurgeryType';
 
@@ -18,7 +19,7 @@ export default function SurgeryTypeSection({title, list}: SurgeryTypeSectionProp
     const theme = useTheme() 
 
     return (
-        <View style={styles['.SurgeryTypeSection']}>
+        <View style={styles.surgeryTypeSection} dataSet={{ media: ids.surgeryTypeSection }}>
                 <List.Accordion
                     title={title} 
                     titleStyle={{
@@ -30,7 +31,7 @@ export default function SurgeryTypeSection({title, list}: SurgeryTypeSectionProp
                     containerStyle={{
                         paddingHorizontal:10
                     }}>
-                        <View style={styles['.CardList']}>
+                        <View style={styles.cardList} dataSet={{ media: ids.cardList }}>
                             {surgeryTypes}
                         </View>
                 </List.Accordion>
@@ -40,14 +41,19 @@ export default function SurgeryTypeSection({title, list}: SurgeryTypeSectionProp
 
 
 
-const styles = StyleSheet.create({
-  ".SurgeryTypeSection": {
+const {ids, styles} = StyleSheet.create({
+  surgeryTypeSection: {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "stretch",
-    // padding: 15,
   },
-  ".CardList": {
-    paddingHorizontal: 10
+  cardList: {
+    paddingHorizontal: 10,
+    "@media (min-width: 600px)": {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        alignItems: "center",
+        justifyContent: "space-evenly"
+    }
   }
 });
