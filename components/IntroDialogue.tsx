@@ -27,7 +27,7 @@ export function IntroDialogue({visible, setVisible}: DialogueProps) {
             let listOfIcons: React.JSX.Element[] = []
             for (let icon of dialogueData.icons) {
                 listOfIcons.push(
-                    <View style={{margin:6}}>
+                    <View style={{margin:6}} key={icon}>
                         <Icon source={icon} size={32} color={themes.colors.secondary}/>
                     </View>
                 )
@@ -56,10 +56,10 @@ export function IntroDialogue({visible, setVisible}: DialogueProps) {
             <Divider/>
             <View style={{flexDirection: 'row'}}>
                 <Dialog.Actions style={styles['.CentreButton']}>
-                    <IconButton icon="chevron-left" onPress={decrIndex}/>
+                    <IconButton icon="chevron-left" onPress={decrIndex} disabled={dialogueIndex===minIndex? true : false}/>
                 </Dialog.Actions>
                 <Dialog.Actions style={styles['.CentreButton']}>
-                    <IconButton icon="chevron-right" onPress={incrIndex}/>
+                    <IconButton icon="chevron-right" onPress={incrIndex} disabled={dialogueIndex===maxIndex? true : false}/>
                 </Dialog.Actions>
             </View>
             
