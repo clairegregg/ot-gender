@@ -33,7 +33,7 @@ export default function Index() {
       )
   });
 
-  const [dialogueVisible, setDialogueVisible] = React.useState(false);
+  const [dialogueVisible, setDialogueVisible] = React.useState(true);
   const showDialog = () => setDialogueVisible(true);
 
   return (
