@@ -7,6 +7,7 @@ import {
 } from 'react-native-paper';
 import SurgeryTypeSection from '@/components/SurgeryTypeSection';
 import { IntroDialogue } from '@/components/IntroDialogue';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 
 const data = require('@/constants/ApplicationData.json')
@@ -14,6 +15,7 @@ const lightTheme = require('@/assets/themes/light.json')
 const darkTheme = require('@/assets/themes/dark.json')
 
 export default function Index() {
+  const insets = useSafeAreaInsets();
   let sections: Map<string, any[]> = new Map();
   for (let surgery of data.surgeries) {
     if (sections.has(surgery.primary_association)){
@@ -49,7 +51,7 @@ export default function Index() {
           }} />
         </Appbar.Header>
         <IntroDialogue visible={dialogueVisible} setVisible={setDialogueVisible}/>
-        <ScrollView>
+        <ScrollView style={{marginBottom: insets.bottom}}>
           { surgeryTypeSections }
         </ScrollView>
       </View>
