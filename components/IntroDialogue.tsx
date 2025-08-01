@@ -11,15 +11,17 @@ interface DialogueProps {
 const data = require('@/constants/ApplicationData.json')
 
 export function IntroDialogue({visible, setVisible}: DialogueProps) {
-    const hideDialog = () => setVisible(false);
-
-    const themes = useTheme()
-
     const [dialogueIndex, setIndex] = useState(0);
     const maxIndex = data.welcome_dialogues.length - 1
     const minIndex = 0
     const decrIndex = () => setIndex(Math.max(dialogueIndex-1, minIndex))
     const incrIndex = () => setIndex(Math.min(dialogueIndex+1, maxIndex))
+    const hideDialog = () => {
+        setVisible(false);
+        setIndex(minIndex)
+    }
+
+    const themes = useTheme()
     let dialogues: React.JSX.Element[] = []
     for (let dialogueData of data.welcome_dialogues){
         let icons: any = null
@@ -43,7 +45,7 @@ export function IntroDialogue({visible, setVisible}: DialogueProps) {
         <Dialog visible={visible} onDismiss={hideDialog}>
             <View style={{flexDirection: 'row', alignContent: 'center'}}>
                 <Dialog.Title style={{fontSize: themes.fonts.titleLarge.fontSize, flexShrink: 2}}>{dialogueData.title}</Dialog.Title>
-                <Dialog.Actions style={{paddingBottom: 0}}>
+                <Dialog.Actions style={{paddingBottom: 0, alignSelf: "flex-start"}}>
                     <IconButton icon="close" onPress={hideDialog} />
                 </Dialog.Actions>
             </View>
