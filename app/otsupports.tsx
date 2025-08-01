@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ScrollView, View } from 'react-native';
+import { BackHandler, Linking, Platform, ScrollView, View } from 'react-native';
 import {
   MD3LightTheme as DefaultTheme,
   PaperProvider,
@@ -57,7 +57,13 @@ export default function OtSupports() {
           <Appbar.Header elevated>
             <Appbar.BackAction onPress={() => {router.back()}}/>
             <Appbar.Content title={surgeryName} />
-            <Appbar.Action icon="cancel" onPress={() => {}} />
+            <Appbar.Action icon="cancel" onPress={() => {
+              if (Platform.OS === 'android') {
+                BackHandler.exitApp()
+              } else {
+                Linking.openURL("https://www.google.com")
+              }    
+            }} />
           </Appbar.Header>
           <TabsProvider>
             <Tabs mode='scrollable' showLeadingSpace={false}>

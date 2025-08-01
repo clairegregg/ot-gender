@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StyleSheet, ScrollView } from 'react-native';
 import { Divider, Text } from 'react-native-paper';
 import Markdown, { ASTNode } from '@ronradtke/react-native-markdown-display';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface OtRecommendationsProp {
     recommendationType: string,
@@ -11,12 +12,14 @@ interface OtRecommendationsProp {
 
 
 export function OtReccomendationsScreen({recommendationType, recommendations}: OtRecommendationsProp) {
+    const insets = useSafeAreaInsets()
     return (
         <ScrollView contentContainerStyle={{
             justifyContent: "center",
             padding: 20,
             alignItems: "stretch",
-            flexDirection: "column"
+            flexDirection: "column",
+            marginBottom: insets.bottom
         }}>
             <Text variant='headlineSmall' style={styles['.MainTitle']}>{recommendationType}</Text>
             <Divider/>
