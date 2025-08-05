@@ -8,7 +8,6 @@
     "scheme": "otgender",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "entryPoint": "./app/index.tsx",
     "ios": {
       "supportsTablet": true
     },
