@@ -17,7 +17,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "ot-gender"
+      "package": "com.gregg.otgender"
     },
     "web": {
       "bundler": "metro",
