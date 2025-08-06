@@ -1,10 +1,12 @@
 import express from 'express';
+import cors from 'cors';
 import { MongoClient } from 'mongodb';
 import { createRoutes } from './routes';
 
 const app = express();
 const port = 6440;
 
+app.use(cors());
 app.use(express.json());
 
 MongoClient.connect("mongodb://db.aisling.clairegregg.com:27018", {})
