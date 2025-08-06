@@ -51,7 +51,7 @@ export default function Index() {
       <View style={{ backgroundColor: theme.colors.surface, flex: 1}}>
         <Appbar.Header mode='center-aligned' elevated>
           <Appbar.Action icon="information-outline" isLeading onPress={showDialog} />
-          <Appbar.Content title="NGS" />
+          <Appbar.Content title="[Service Name]" />
           <Appbar.Action icon="cancel" onPress={() => {
             if (Platform.OS === 'android') {
               BackHandler.exitApp()
