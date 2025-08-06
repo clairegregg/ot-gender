@@ -40,9 +40,7 @@ jobs:
       - name: Export for Web
         run: npx expo export --platform web
 
-      - name: Create preview
-        uses: expo/expo-github-action/preview@v8
-        with:
-          command: eas deploy --prod
+      - name: Deploy
+        run: eas deploy --prod
 
       
