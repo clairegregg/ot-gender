@@ -5,14 +5,13 @@ import { Button, Dialog, Divider, Icon, IconButton, Portal, Text, useTheme } fro
 
 interface DialogueProps {
     visible: boolean, 
-    setVisible: React.Dispatch<React.SetStateAction<boolean>>
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>,
+    welcomes: any[]
 }
 
-const data = require('@/constants/ApplicationData.json')
-
-export function IntroDialogue({visible, setVisible}: DialogueProps) {
+export function IntroDialogue({visible, setVisible, welcomes}: DialogueProps) {
     const [dialogueIndex, setIndex] = useState(0);
-    const maxIndex = data.welcome_dialogues.length - 1
+    const maxIndex = welcomes.length - 1
     const minIndex = 0
     const decrIndex = () => setIndex(Math.max(dialogueIndex-1, minIndex))
     const incrIndex = () => setIndex(Math.min(dialogueIndex+1, maxIndex))
@@ -23,7 +22,7 @@ export function IntroDialogue({visible, setVisible}: DialogueProps) {
 
     const themes = useTheme()
     let dialogues: React.JSX.Element[] = []
-    for (let dialogueData of data.welcome_dialogues){
+    for (let dialogueData of welcomes){
         let icons: any = null
         if (dialogueData.icons.length > 0) {
             let listOfIcons: React.JSX.Element[] = []

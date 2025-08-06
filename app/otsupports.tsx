@@ -15,7 +15,6 @@ import {
 } from 'react-native-paper-tabs';
 import { OtReccomendationsScreen } from '@/components/OtReccomendationSection';
 
-const data = require('@/constants/ApplicationData.json')
 const lightTheme = require('@/assets/themes/light.json')
 const darkTheme = require('@/assets/themes/dark.json')
 
@@ -25,12 +24,16 @@ type otConsideration = {
   contents: string
 }
 
-export default function OtSupports() {
+interface OTSupportProps {
+    surgeries: any[]
+}
+
+export default function OtSupports({surgeries}: OTSupportProps) {
     const router = useRouter()
     const { surgeryName } = useLocalSearchParams<{surgeryName: string}>()
     
     let surgery: any;
-    for (let specificSurgery of data.surgeries){
+    for (let specificSurgery of surgeries){
       if (specificSurgery.name === surgeryName){  
         surgery = specificSurgery
       } 
