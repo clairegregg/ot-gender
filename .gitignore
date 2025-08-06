@@ -2,12 +2,17 @@
 
 # dependencies
 node_modules/
+AdminEdit/node_modules/
 
 # Expo
 .expo/
+AdminEdit/.expo/
 dist/
+AdminEdit/dist/
 web-build/
+AdminEdit/web-build/
 expo-env.d.ts
+AdminEdit/expo-env.d.ts
 
 # Native
 .kotlin/
@@ -37,3 +42,4 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+AdminEdit/.vscode
