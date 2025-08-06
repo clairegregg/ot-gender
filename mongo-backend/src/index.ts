@@ -9,7 +9,7 @@ app.use(express.json());
 
 MongoClient.connect("mongodb://db.aisling.clairegregg.com:27018", {})
   .then(client => {
-    const db = client.db();
+    const db = client.db("appdata");
     console.log("✅ Connected to MongoDB");
 
     app.use('/', createRoutes(db));
