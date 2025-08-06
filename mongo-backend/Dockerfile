@@ -10,7 +10,7 @@ COPY tsconfig.json ./
 COPY src ./src
 
 # Install dependencies
-RUN npm install --production
+RUN npm install
 
 # Transpile TS
 RUN npm install -g typescript && tsc
