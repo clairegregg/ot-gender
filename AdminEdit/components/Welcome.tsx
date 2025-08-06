@@ -12,7 +12,7 @@ export function Welcome({welcome}: WelcomeProps) {
     const router = useRouter();
     const theme = useTheme();
     return (
-        <List.Item title={welcome.title} right={(_) => <EditButtons database='welcomes' item={welcome}/>}/>
+        <List.Item title={welcome.title} right={(_) => <EditButtons database='welcome' item={welcome}/>}/>
     );
 }
 

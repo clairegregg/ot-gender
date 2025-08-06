@@ -12,7 +12,7 @@ export function Surgery({surgery}: SurgeryProps) {
     const router = useRouter();
     const theme = useTheme();
     return (
-        <List.Item title={surgery.name} right={(_) => <EditButtons database='surgeries' item={surgery}/>}/>
+        <List.Item title={surgery.name} right={(_) => <EditButtons database='surgery' item={surgery}/>}/>
     );
 }
 

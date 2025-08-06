@@ -44,7 +44,7 @@ export default function Welcomes() {
       <View style={{ flex: 1 }}>
         <Appbar.Header elevated>
             <Appbar.BackAction onPress={() => {router.back()}}/>
-            <Appbar.Content title="Surgeries" />
+            <Appbar.Content title="Welcomes" />
             <Appbar.Action icon={"plus"}/>
         </Appbar.Header>
       </View>
