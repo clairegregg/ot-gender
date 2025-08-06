@@ -43,3 +43,6 @@ yarn-error.*
 
 app-example
 AdminEdit/.vscode
+AdminEdit/android
+AdminEdit/ios
+AdminEdit/latest

@@ -44,7 +44,7 @@ export default function Surgeries() {
         <Appbar.Header elevated>
             <Appbar.BackAction onPress={() => {router.back()}}/>
             <Appbar.Content title="Surgeries" />
-            <Appbar.Action icon={"plus"}/>
+            <Appbar.Action icon={"plus"} onPress={() => router.navigate(`/newSurgery`)}/>
         </Appbar.Header>
       </View>
       {loading ? (
