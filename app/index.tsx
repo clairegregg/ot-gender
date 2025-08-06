@@ -5,13 +5,13 @@ import {
   BackHandler,
   Platform,
   Linking,
-  ActivityIndicator,
   Alert
 } from 'react-native';
 import {
   MD3LightTheme as DefaultTheme,
   PaperProvider,
-  Appbar
+  Appbar,
+  ActivityIndicator
 } from 'react-native-paper';
 import SurgeryTypeSection from '@/components/SurgeryTypeSection';
 import { IntroDialogue } from '@/components/IntroDialogue';
@@ -93,16 +93,17 @@ export default function Index() {
           />
         </Appbar.Header>
 
-        <IntroDialogue visible={dialogueVisible} setVisible={setDialogueVisible} welcomes={welcomes} />
-
         {loading ? (
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <ActivityIndicator size="large" />
           </View>
         ) : (
+          <React.Fragment>
+          <IntroDialogue visible={dialogueVisible} setVisible={setDialogueVisible} welcomes={welcomes} />
           <ScrollView style={{ marginBottom: insets.bottom }}>
             {surgeryTypeSections}
           </ScrollView>
+          </React.Fragment>
         )}
       </View>
     </PaperProvider>
