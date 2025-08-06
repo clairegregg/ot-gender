@@ -18,7 +18,6 @@ import { IntroDialogue } from '@/components/IntroDialogue';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 const lightTheme = require('@/assets/themes/light.json')
-const darkTheme = require('@/assets/themes/dark.json')
 const url = 'https://backend.aisling.clairegregg.com/content'; 
 
 export default function Index() {
