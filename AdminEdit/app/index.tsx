@@ -1,16 +1,15 @@
 import { useRouter } from "expo-router";
 import React from "react";
-import { View, Platform } from "react-native";
+import { View } from "react-native";
 import {
-  PaperProvider,
   Appbar,
   Button,
-  useTheme,
-  List
+  PaperProvider
 } from 'react-native-paper';
 
+const url = 'https://backend.aisling.clairegregg.com/content'; 
+
 export default function Index() {
-  const theme = useTheme()
   const router = useRouter()
   return (
     <PaperProvider>
