@@ -115,7 +115,7 @@
         {
             "name": "Hysterectomy",
             "primary_association": "Masculinising Surgeries",
-            "type": "Internal Surgery",
+            "type": "Bottom Surgery (reproductive)",
             "summary": "A  hysterectomy is...",
             "ot_considerations": [
                 {
@@ -143,7 +143,7 @@
         {
             "name": "Salpingo-Oopherectomy",
             "primary_association": "Masculinising Surgeries",
-            "type": "Internal Surgery",
+            "type": "Bottom Surgery (reproductive)",
             "summary": "A  salpingo-oopherectomy is...",
             "ot_considerations": [
                 {
