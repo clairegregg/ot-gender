@@ -56,6 +56,7 @@ export const createRoutes = (db: Db): Router => {
       });
       res.json(surgery);
     } catch (err) {
+      console.log(err)
       res.status(500).json({ error: 'Failed to fetch specific surgery' });
     }
   });
@@ -118,6 +119,7 @@ export const createRoutes = (db: Db): Router => {
       });
       res.json(welcome);
     } catch (err) {
+      console.log(err)
       res.status(500).json({ error: 'Failed to fetch specific welcome' });
     }
   });
