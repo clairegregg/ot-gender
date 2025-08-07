@@ -4,16 +4,18 @@ import { View } from "react-native";
 import {
   Appbar,
   Button,
-  PaperProvider
+  PaperProvider,
+  useTheme
 } from 'react-native-paper';
 
 const url = 'https://backend.aisling.clairegregg.com/content'; 
 
 export default function Index() {
   const router = useRouter()
+  const theme = useTheme()
   return (
     <PaperProvider>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: theme.colors.surface }}>
         <Appbar.Header mode="center-aligned" elevated>
           {/* <Appbar.Action icon="information-outline" isLeading onPress={showDialog} /> */}
           <Appbar.Content title="Modify Data" />

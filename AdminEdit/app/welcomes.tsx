@@ -7,6 +7,7 @@ import {
   PaperProvider,
   Appbar,
   ActivityIndicator,
+  useTheme,
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -15,6 +16,7 @@ const url = 'https://backend.aisling.clairegregg.com/welcome';
 export default function Welcomes() {
   const insets = useSafeAreaInsets();
   const router = useRouter()
+  const theme = useTheme()
   const [welcomes, setWelcomes] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState(true);
 
@@ -41,22 +43,22 @@ export default function Welcomes() {
 
   return (
     <PaperProvider>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: theme.colors.surface }}>
         <Appbar.Header elevated>
             <Appbar.BackAction onPress={() => {router.back()}}/>
             <Appbar.Content title="Welcomes" />
             <Appbar.Action icon={"plus"}/>
         </Appbar.Header>
+        {loading ? (
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+              <ActivityIndicator size="large" />
+            </View>
+          ) : (
+            <ScrollView style={{ marginBottom: insets.bottom }}>
+              {welcomeElements}
+            </ScrollView>
+          )}
       </View>
-      {loading ? (
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <ActivityIndicator size="large" />
-          </View>
-        ) : (
-          <ScrollView style={{ marginBottom: insets.bottom }}>
-            {welcomeElements}
-          </ScrollView>
-        )}
     </PaperProvider>
   );
 }

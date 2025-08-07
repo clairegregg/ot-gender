@@ -1,61 +1,75 @@
 import { Surgery } from "@/components/Surgery";
-import { useRouter } from "expo-router";
+import { useFocusEffect, useRouter } from "expo-router";
 import React from "react";
 import { Alert, ScrollView, View } from "react-native";
 import {
   PaperProvider,
   Appbar,
   ActivityIndicator,
+  useTheme,
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const url = 'https://backend.aisling.clairegregg.com/surgery'; 
 
+const fetchSurgeries = async (setLoading: React.Dispatch<React.SetStateAction<boolean>>, setSurgeries: React.Dispatch<React.SetStateAction<any[]>>) => {
+  setLoading(true);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Network response was not ok");
+    const data = await response.json();
+    setSurgeries(data || []);
+  } catch (error) {
+    console.error('Failed to fetch content:', error);
+    Alert.alert("Error", "Could not load application data.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 export default function Surgeries() {
   const insets = useSafeAreaInsets();
   const router = useRouter()
+  const theme = useTheme()
   const [surgeries, setSurgeries] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Network response was not ok");
-        const data = await response.json();
-        setSurgeries(data || []);
-      } catch (error) {
-        console.error('Failed to fetch content:', error);
-        Alert.alert("Error", "Could not load application data.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
+    fetchSurgeries(setLoading, setSurgeries)
   }, []);
+  const refreshSurgeries = () => {
+    fetchSurgeries(setLoading, setSurgeries)
+  }
+  useFocusEffect(
+    React.useCallback(() => {
+      refreshSurgeries()
+      return () => {};
+    }, [])
+  );
 
   const surgeryElements = surgeries.map((surgery) => (
-    <Surgery surgery={surgery} key={surgery.name}></Surgery>
+    <Surgery surgery={surgery} key={surgery.name} refresh={refreshSurgeries}></Surgery>
   ))
 
   return (
     <PaperProvider>
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: theme.colors.surface }}>
         <Appbar.Header elevated>
             <Appbar.BackAction onPress={() => {router.back()}}/>
             <Appbar.Content title="Surgeries" />
             <Appbar.Action icon={"plus"} onPress={() => router.navigate(`/newSurgery`)}/>
         </Appbar.Header>
-      </View>
-      {loading ? (
-          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <ActivityIndicator size="large" />
-          </View>
-        ) : (
-          <ScrollView style={{ marginBottom: insets.bottom }}>
-            {surgeryElements}
-          </ScrollView>
-        )}
+      
+        {loading ? (
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+              <ActivityIndicator size="large" />
+            </View>
+          ) : (
+            <ScrollView style={{ marginBottom: insets.bottom }}>
+              {surgeryElements}
+            </ScrollView>
+          )}
+        </View>
     </PaperProvider>
   );
 }
