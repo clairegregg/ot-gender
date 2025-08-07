@@ -48,6 +48,18 @@ export const createRoutes = (db: Db): Router => {
     }
   });
 
+  router.get('/surgery/:id', async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params;
+      const surgery = await db.collection('surgeries').find({
+        _id: new ObjectId(id),
+      });
+      res.json(surgery);
+    } catch (err) {
+      res.status(500).json({ error: 'Failed to fetch specific surgery' });
+    }
+  });
+
   router.put('/surgery/:id', async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
@@ -95,6 +107,18 @@ export const createRoutes = (db: Db): Router => {
       res.json(welcomes);
     } catch (err) {
       res.status(500).json({ error: 'Failed to fetch welcomes' });
+    }
+  });
+
+  router.get('/welcome/:id', async (req: Request, res: Response) => {
+    try {
+      const { id } = req.params;
+      const welcome = await db.collection('welcome').find({
+        _id: new ObjectId(id),
+      });
+      res.json(welcome);
+    } catch (err) {
+      res.status(500).json({ error: 'Failed to fetch specific welcome' });
     }
   });
 
