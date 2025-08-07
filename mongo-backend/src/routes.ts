@@ -51,7 +51,7 @@ export const createRoutes = (db: Db): Router => {
   router.get('/surgery/:id', async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
-      const surgery = await db.collection('surgeries').find({
+      const surgery = await db.collection('surgeries').findOne({
         _id: new ObjectId(id),
       });
       res.json(surgery);
@@ -114,7 +114,7 @@ export const createRoutes = (db: Db): Router => {
   router.get('/welcome/:id', async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
-      const welcome = await db.collection('welcome').find({
+      const welcome = await db.collection('welcome').findOne({
         _id: new ObjectId(id),
       });
       res.json(welcome);
