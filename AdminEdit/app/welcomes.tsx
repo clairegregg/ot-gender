@@ -58,7 +58,7 @@ export default function Welcomes() {
         <Appbar.Header elevated>
             <Appbar.BackAction onPress={() => {router.back()}}/>
             <Appbar.Content title="Welcomes" />
-            <Appbar.Action icon={"plus"}/>
+            <Appbar.Action icon={"plus"} onPress={() => {router.navigate('/newWelcome')}}/>
         </Appbar.Header>
         {loading ? (
             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
