@@ -1,6 +1,6 @@
 import { Surgery } from "@/components/Surgery";
 import { Welcome } from "@/components/Welcome";
-import { useRouter } from "expo-router";
+import { useFocusEffect, useRouter } from "expo-router";
 import React from "react";
 import { Alert, ScrollView, View } from "react-native";
 import {
@@ -13,6 +13,21 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const url = 'https://backend.aisling.clairegregg.com/welcome'; 
 
+const fetchWelcomes = async (setLoading: React.Dispatch<React.SetStateAction<boolean>>, setWelcomes: React.Dispatch<React.SetStateAction<any[]>>) => {
+  setLoading(true);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Network response was not ok");
+    const data = await response.json();
+    setWelcomes(data || []);
+  } catch (error) {
+    console.error('Failed to fetch content:', error);
+    Alert.alert("Error", "Could not load application data.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 export default function Welcomes() {
   const insets = useSafeAreaInsets();
   const router = useRouter()
@@ -21,24 +36,20 @@ export default function Welcomes() {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-        if (!response.ok) throw new Error("Network response was not ok");
-        const data = await response.json();
-        setWelcomes(data || []);
-      } catch (error) {
-        console.error('Failed to fetch content:', error);
-        Alert.alert("Error", "Could not load application data.");
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchData();
+    fetchWelcomes(setLoading, setWelcomes)
   }, []);
+  const refreshWelcomes = () => {
+    fetchWelcomes(setLoading, setWelcomes)
+  }
+  useFocusEffect(
+    React.useCallback(() => {
+      refreshWelcomes()
+      return () => {};
+    }, [])
+  );
 
   const welcomeElements = welcomes.map((welcome) => (
-    <Welcome welcome={welcome} key={welcome.title}/>
+    <Welcome welcome={welcome} key={welcome.title} refresh={refreshWelcomes}/>
   ))
 
   return (
