@@ -6,6 +6,7 @@ import {
   Appbar,
   Button,
   useTheme,
+  MD3LightTheme,
 } from 'react-native-paper';
 import EditSurgery, {consideration, emptyConsideration} from "@/components/EditSurgeryComponent";
 
@@ -15,7 +16,7 @@ const url = 'https://backend.aisling.clairegregg.com/surgery';
 
 export default function NewSurgery() {
   const router = useRouter()
-  const theme = useTheme()
+  const theme = MD3LightTheme
 
   const [name, setName] = React.useState("");
   const [association, setAssociation] = React.useState("");
@@ -24,7 +25,7 @@ export default function NewSurgery() {
   const [considerations, setConsiderations] = React.useState<consideration[]>([emptyConsideration()]);
   
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <View style={{ flex: 1, backgroundColor: theme.colors.surface }}>
         <Appbar.Header elevated>
             <Appbar.BackAction onPress={() => {router.back()}}/>

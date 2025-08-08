@@ -6,6 +6,7 @@ import {
   Appbar,
   Button,
   useTheme,
+  MD3LightTheme,
 } from 'react-native-paper';
 import EditWelcome from "@/components/EditWelcomeComponent";
 
@@ -15,14 +16,14 @@ const url = 'https://backend.aisling.clairegregg.com/welcome';
 
 export default function NewWelcome() {
   const router = useRouter()
-  const theme = useTheme()
+  const theme = MD3LightTheme
 
   const [title, setTitle] = React.useState("");
   const [text, setText] = React.useState("");
   const [icons, setIcons] = React.useState<string[]>([]);
   
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <View style={{ flex: 1, backgroundColor: theme.colors.surface }}>
         <Appbar.Header elevated>
             <Appbar.BackAction onPress={() => {router.back()}}/>

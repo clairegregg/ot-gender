@@ -7,7 +7,8 @@ import {
   Appbar,
   ActivityIndicator,
   useTheme,
-  Text
+  Text,
+  MD3LightTheme
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -31,7 +32,7 @@ const fetchSurgeries = async (setLoading: React.Dispatch<React.SetStateAction<bo
 export default function Surgeries() {
   const insets = useSafeAreaInsets();
   const router = useRouter()
-  const theme = useTheme()
+  const theme = MD3LightTheme
   const [surgeries, setSurgeries] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState(true);
 
@@ -53,7 +54,7 @@ export default function Surgeries() {
   ))
 
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <View style={{ flex: 1, backgroundColor: theme.colors.surface }}>
         <Appbar.Header elevated>
             <Appbar.BackAction onPress={() => {router.back()}}/>

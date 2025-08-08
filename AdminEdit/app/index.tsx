@@ -6,7 +6,8 @@ import {
   Button,
   PaperProvider,
   useTheme,
-  Text
+  Text,
+  MD3LightTheme
 } from 'react-native-paper';
 
 const url = 'https://backend.aisling.clairegregg.com/content'; 
@@ -15,7 +16,7 @@ export default function Index() {
   const router = useRouter()
   const theme = useTheme()
   return (
-    <PaperProvider>
+    <PaperProvider theme={MD3LightTheme}>
       <View style={{ flex: 1, backgroundColor: theme.colors.surface }}>
         <Appbar.Header mode="center-aligned" elevated>
           <Appbar.Content title="Modify Application Data" />

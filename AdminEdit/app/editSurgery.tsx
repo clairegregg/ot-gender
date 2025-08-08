@@ -7,6 +7,7 @@ import {
   Button,
   useTheme,
   ActivityIndicator,
+  MD3LightTheme,
 } from 'react-native-paper';
 import EditSurgery, {consideration} from "@/components/EditSurgeryComponent";
 
@@ -67,7 +68,7 @@ const fetchSurgery = async (id: string,
 
 export default function EditSurgeryPage() {
   const router = useRouter()
-  const theme = useTheme()
+  const theme = MD3LightTheme
   const { id } = useLocalSearchParams<{id: string}>()
   const [surgery, setSurgery] = React.useState(emptySurgery)
   const [loading, setLoading] = React.useState(false)
@@ -82,7 +83,7 @@ export default function EditSurgeryPage() {
     }, []);
   
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <View style={{ flex: 1, backgroundColor: theme.colors.surface }}>
         <Appbar.Header elevated>
             <Appbar.BackAction onPress={() => {router.back()}}/>

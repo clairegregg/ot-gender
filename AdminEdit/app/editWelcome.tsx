@@ -7,6 +7,7 @@ import {
   Button,
   useTheme,
   ActivityIndicator,
+  MD3LightTheme,
 } from 'react-native-paper';
 import EditSurgery, {consideration, emptyConsideration} from "@/components/EditSurgeryComponent";
 import EditWelcome from "@/components/EditWelcomeComponent";
@@ -56,7 +57,7 @@ const fetchWelcome = async (id: string,
 
 export default function EditSurgeryPage() {
   const router = useRouter()
-  const theme = useTheme()
+  const theme = MD3LightTheme
   const { id } = useLocalSearchParams<{id: string}>()
   const [welcome, setWelcome] = React.useState(emptyWelcome())
   const [loading, setLoading] = React.useState(false)
@@ -69,7 +70,7 @@ export default function EditSurgeryPage() {
     }, []);
   
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <View style={{ flex: 1, backgroundColor: theme.colors.surface }}>
         <Appbar.Header elevated>
             <Appbar.BackAction onPress={() => {router.back()}}/>
