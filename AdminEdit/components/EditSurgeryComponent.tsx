@@ -11,7 +11,7 @@ import {
   useTheme
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-// import {MarkdownTextInput, parseExpensiMark} from '@expensify/react-native-live-markdown';
+import {MarkdownTextInput, parseExpensiMark} from '@expensify/react-native-live-markdown';
 
 
 export type consideration = {
@@ -91,14 +91,14 @@ export default function EditSurgery({name, setName, association, setAssociation,
         }}/>
         <Text variant="labelLarge">Contents</Text>
         <Text variant="labelMedium">Formatted using markdown.</Text>
-        {/* <MarkdownTextInput value={considerations[index].contents} parser={parseExpensiMark} multiline={true} onChangeText={ contents => {
+        <MarkdownTextInput value={considerations[index].contents} parser={parseExpensiMark} multiline={true} onChangeText={ contents => {
             const newConsiderations = [...considerations];
             newConsiderations[index] = {
             ...newConsiderations[index],
             contents: contents,
             };  
             setConsiderations(newConsiderations);
-        }} /> */}
+        }} />
         </List.Section>
     </React.Fragment>
     )
@@ -125,7 +125,9 @@ export default function EditSurgery({name, setName, association, setAssociation,
           </Text>
         )
         </Text>
-        {/* <MarkdownTextInput value={summary} onChangeText={setSummary} parser={parseExpensiMark} multiline={true}/> style={{marginBottom: 20}} */}
+        <View style={{marginBottom: 20}}>
+          <MarkdownTextInput value={summary} onChangeText={setSummary} parser={parseExpensiMark} multiline={true}/>
+        </View>
         <Text variant="labelLarge">OT Considerations</Text>
         <Text variant="labelMedium">Each surgery has one or more sections for OT considerations - e.g. pre-surgical, journey to/from surgery, etc. 
           <br/>

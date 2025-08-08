@@ -10,7 +10,7 @@ import {
   Text
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-// import {MarkdownTextInput, parseExpensiMark} from '@expensify/react-native-live-markdown';
+import {MarkdownTextInput, parseExpensiMark} from '@expensify/react-native-live-markdown';
 
 interface EditWelcomeProps {
     title: string,
@@ -58,7 +58,9 @@ export default function EditWelcome({title, setTitle, text, setText, icons, setI
           </Text>
         )
           </Text>
-        {/* <MarkdownTextInput value={text} onChangeText={setText} parser={parseExpensiMark} multiline={true}/> style={{marginBottom: 20}}*/}
+        <View style={{marginBottom: 20}}>
+          <MarkdownTextInput value={text} onChangeText={setText} parser={parseExpensiMark} multiline={true}/> 
+        </View>
         <Text variant="labelLarge">Icons</Text>
         <Text variant="labelMedium">You can optionally include icons in the welcome message. They will appear below the text. 
           <br/>
