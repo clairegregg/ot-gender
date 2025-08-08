@@ -7,6 +7,7 @@ import {
   Appbar,
   ActivityIndicator,
   useTheme,
+  Text
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -66,6 +67,13 @@ export default function Surgeries() {
             </View>
           ) : (
             <ScrollView style={{ marginBottom: insets.bottom }}>
+              <Text>{`
+                  These are the surgeries whose information is provided in the app.
+
+                  New surgeries can be added using the + button in the top corner. 
+                  Existing surgeries can be edited by clicking on the pencil icon next to them, or deleted by clicking on the bin.
+              `}
+              </Text>
               {surgeryElements}
             </ScrollView>
           )}

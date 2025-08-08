@@ -7,6 +7,7 @@ import {
   IconButton,
   Icon,
   useTheme,
+  Text
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 // import {MarkdownTextInput, parseExpensiMark} from '@expensify/react-native-live-markdown';
@@ -49,8 +50,11 @@ export default function EditWelcome({title, setTitle, text, setText, icons, setI
 
   return (
     <ScrollView style={{ marginBottom: insets.bottom }}>
+        <Text variant="labelLarge">Title of welcome.</Text>
         <TextInput label="Title" mode="outlined" value={title} onChangeText={title => setTitle(title)}/>
+        <Text variant="labelLarge">Contents of welcome. This can be formatted using markdown (https://www.markdownguide.org/basic-syntax/).</Text>
         {/* <MarkdownTextInput value={text} onChangeText={setText} parser={parseExpensiMark} multiline={true}/> */}
+        <Text variant="labelLarge">Icons - you can optionally include icons in the welcome message, which will appear below the text. Put the name of the icon here to see a preview. Icons can be found at https://pictogrammers.com/library/mdi/</Text>
         <Button onPress={() => {
         const newIcons = [...icons, ""];
         setIcons(newIcons);

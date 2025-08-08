@@ -8,6 +8,7 @@ import {
   Appbar,
   ActivityIndicator,
   useTheme,
+  Text
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -66,6 +67,12 @@ export default function Welcomes() {
             </View>
           ) : (
             <ScrollView style={{ marginBottom: insets.bottom }}>
+              <Text>{`
+                  These are the welcome messages displayed when a user first launches the app, labelled here by their titles.
+
+                  These are displayed to the user in the order shown here.
+              `}
+              </Text>
               {welcomeElements}
             </ScrollView>
           )}

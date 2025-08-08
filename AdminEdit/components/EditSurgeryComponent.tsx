@@ -7,6 +7,7 @@ import {
   IconButton,
   Portal,
   Snackbar,
+  Text
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 // import {MarkdownTextInput, parseExpensiMark} from '@expensify/react-native-live-markdown';
@@ -69,6 +70,7 @@ export default function EditSurgery({name, setName, association, setAssociation,
             }
         }}/>
         </View>
+        <Text variant="labelLarge">Title of consideration.</Text>
         <TextInput label="Title" mode="outlined" value={considerations[index].title} onChangeText={title => {
             const newConsiderations = [...considerations];
             newConsiderations[index] = {
@@ -77,6 +79,7 @@ export default function EditSurgery({name, setName, association, setAssociation,
             };  
             setConsiderations(newConsiderations);
         }}/>
+        <Text variant="labelLarge">Short version of title - this will be shown in the navigation bar.</Text>
         <TextInput label="Short Title" mode="outlined" value={considerations[index].short_title} onChangeText={short_title => {
             const newConsiderations = [...considerations];
             newConsiderations[index] = {
@@ -85,6 +88,7 @@ export default function EditSurgery({name, setName, association, setAssociation,
             };  
             setConsiderations(newConsiderations);
         }}/>
+        <Text variant="labelLarge">Contents of the OT consideration - formatted using markdown.</Text>
         {/* <MarkdownTextInput value={considerations[index].contents} parser={parseExpensiMark} multiline={true} onChangeText={ contents => {
             const newConsiderations = [...considerations];
             newConsiderations[index] = {
@@ -101,10 +105,15 @@ export default function EditSurgery({name, setName, association, setAssociation,
 
   return (
     <ScrollView style={{ marginBottom: insets.bottom }}>
+        <Text variant="labelLarge">Name of surgery</Text>
         <TextInput label="Name" mode="outlined" value={name} onChangeText={name => setName(name)}/>
+        <Text variant="labelLarge">Primary association - eg "Masculinising Surgeries". This decides how surgeries are grouped on the home page.</Text>
         <TextInput label="Primary Association" mode="outlined" value={association} onChangeText={association => setAssociation(association)}/>
+        <Text variant="labelLarge">Type of surgery - eg "Bottom Surgery". Displayed next to surgery name on home screen.</Text>
         <TextInput label="Type" mode="outlined" value={type} onChangeText={type => setType(type)}/>
+        <Text variant="labelLarge">Summary of surgery. This can be formatted using markdown (https://www.markdownguide.org/basic-syntax/).</Text>
         {/* <MarkdownTextInput value={summary} onChangeText={setSummary} parser={parseExpensiMark} multiline={true}/> */}
+        <Text variant="labelLarge">Considerations for surgery from an OT perspective (minimum 1).</Text>
         <Button onPress={() => {
         const newConsiderations = [...considerations, emptyConsideration()];
         setConsiderations(newConsiderations);
