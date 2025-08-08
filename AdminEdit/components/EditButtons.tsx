@@ -61,7 +61,7 @@ async function DeleteItem(database: string, item: any, refresh: () => void){
 
 function EditItem(router: Router, database: string, item: any) {
     if (database === "welcome") {
-        // Logic for editing welcome
+        router.navigate(`/editWelcome?id=${item._id}`)
     } else {
         router.navigate(`/editSurgery?id=${item._id}`)
     }
