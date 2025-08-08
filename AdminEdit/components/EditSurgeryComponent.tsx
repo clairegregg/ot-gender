@@ -91,7 +91,8 @@ export default function EditSurgery({name, setName, association, setAssociation,
         }}/>
         <Text variant="labelLarge">Contents</Text>
         <Text variant="labelMedium">Formatted using markdown.</Text>
-        <MarkdownTextInput value={considerations[index].contents} parser={parseExpensiMark} multiline={true} onChangeText={ contents => {
+        <MarkdownTextInput style={{padding: 16, marginTop: 10, borderColor: theme.colors.outline, borderRadius: 5, color: theme.colors.onSurface}}
+          value={considerations[index].contents} parser={parseExpensiMark} multiline={true} onChangeText={ contents => {
             const newConsiderations = [...considerations];
             newConsiderations[index] = {
             ...newConsiderations[index],
@@ -126,7 +127,7 @@ export default function EditSurgery({name, setName, association, setAssociation,
         )
         </Text>
         <View style={{marginBottom: 20}}>
-          <MarkdownTextInput value={summary} onChangeText={setSummary} parser={parseExpensiMark} multiline={true}/>
+          <MarkdownTextInput value={summary} onChangeText={setSummary} parser={parseExpensiMark} multiline={true} style={{padding: 16, marginTop: 10, borderColor: theme.colors.outline, borderRadius: 5, color: theme.colors.onSurface}}/>
         </View>
         <Text variant="labelLarge">OT Considerations</Text>
         <Text variant="labelMedium">Each surgery has one or more sections for OT considerations - e.g. pre-surgical, journey to/from surgery, etc. 

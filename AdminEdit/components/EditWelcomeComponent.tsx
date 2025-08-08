@@ -59,7 +59,8 @@ export default function EditWelcome({title, setTitle, text, setText, icons, setI
         )
           </Text>
         <View style={{marginBottom: 20}}>
-          <MarkdownTextInput value={text} onChangeText={setText} parser={parseExpensiMark} multiline={true}/> 
+          <MarkdownTextInput style={{padding: 16, marginTop: 10, borderColor: theme.colors.outline, borderRadius: 5, color: theme.colors.onSurface}}
+            value={text} onChangeText={setText} parser={parseExpensiMark} multiline={true}/> 
         </View>
         <Text variant="labelLarge">Icons</Text>
         <Text variant="labelMedium">You can optionally include icons in the welcome message. They will appear below the text. 

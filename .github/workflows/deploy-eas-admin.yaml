@@ -10,7 +10,7 @@ jobs:
       pull-requests: write
     defaults:
       run:
-        working-directory: AdminApp  # 👈 All run steps happen in AdminApp unless overridden
+        working-directory: AdminEdit  # 👈 All run steps happen in AdminEdit unless overridden
 
     steps:
       - name: Check for EXPO_TOKEN
@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 18.x
           cache: npm
-          cache-dependency-path: AdminApp/package-lock.json  # 👈 Cache deps from subdir
+          cache-dependency-path: AdminEdit/package-lock.json  # 👈 Cache deps from subdir
 
       - name: Setup EAS
         uses: expo/expo-github-action@v8
