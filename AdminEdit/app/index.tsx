@@ -21,24 +21,23 @@ export default function Index() {
         <Appbar.Header mode="center-aligned" elevated>
           <Appbar.Content title="Modify Application Data" />
         </Appbar.Header>
-        <Text>{`
-          Welcome!
+        <View style={{padding: 24}}>
+          <Text variant="titleLarge">Welcome!</Text>
+          <Text variant="bodyLarge">{`
+Here you are able to modify any application data for [Service Name]'s app concerning gender affirming surgeries. 
+NOTE: there is not really any data protection here against accidential deletion, contact Claire if you want a backup made!
 
-          Here you are able to modify any application data for [Service Name]'s app concerning gender affirming surgeries. 
-          NOTE: there is not really any data protection here against accidential deletion, contact Claire if you want a backup made!
+Once you have made a modification, you can check out how it looks in the live app!
 
-          Once you have made a modification, you can check out how it looks in the live app!
+There are two types of data you are able to edit:
+1. Welcome messages which appear when the user first loads the app
+2. Surgeries, which contain details about different gender affirming surgeries and recommendations based on them.
 
-          There are two types of data you are able to edit:
-
-          1. Welcome messages which appear when the user first loads the app
-
-          2. Surgeries, which contain details about different gender affirming surgeries and recommendations based on them.
-
-          Click into either of these types to learn more!
-        `}</Text>
-        <Button onPress={() => {router.navigate(`/welcomes`)}}>Edit App Welcome Messages</Button>
-        <Button onPress={() => {router.navigate(`/surgeries`)}}>Edit Surgery Details</Button>
+Click into either of these types to learn more!
+          `}</Text>
+          <Button onPress={() => {router.navigate(`/welcomes`)}} mode="contained" labelStyle={{fontSize: theme.fonts.titleLarge.fontSize, padding: 16}} style={{margin: 10}}>Edit Welcome Messages</Button>
+          <Button onPress={() => {router.navigate(`/surgeries`)}} mode="contained" labelStyle={{fontSize: theme.fonts.titleLarge.fontSize, padding: 16}} style={{margin: 10}}>Edit Surgery Details</Button>
+        </View>
       </View>
     </PaperProvider>
   );

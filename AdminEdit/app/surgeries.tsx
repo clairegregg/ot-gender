@@ -6,9 +6,9 @@ import {
   PaperProvider,
   Appbar,
   ActivityIndicator,
-  useTheme,
   Text,
-  MD3LightTheme
+  MD3LightTheme,
+  Divider
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -67,14 +67,15 @@ export default function Surgeries() {
               <ActivityIndicator size="large" />
             </View>
           ) : (
-            <ScrollView style={{ marginBottom: insets.bottom }}>
-              <Text>{`
-                  These are the surgeries whose information is provided in the app.
+            <ScrollView style={{ marginBottom: insets.bottom, padding: 24 }}>
+              <Text variant="bodyLarge">{`
+These are the surgeries whose information is provided in the app.
 
-                  New surgeries can be added using the + button in the top corner. 
-                  Existing surgeries can be edited by clicking on the pencil icon next to them, or deleted by clicking on the bin.
+New surgeries can be added using the + button in the top corner. 
+Existing surgeries can be edited by clicking on the pencil icon next to them, or deleted by clicking on the bin.
               `}
               </Text>
+              <Divider/>
               {surgeryElements}
             </ScrollView>
           )}

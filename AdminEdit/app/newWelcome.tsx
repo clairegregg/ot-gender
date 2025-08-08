@@ -31,11 +31,11 @@ export default function NewWelcome() {
         </Appbar.Header>
       
         <EditWelcome title={title} setTitle={setTitle} text={text} setText={setText} icons={icons} setIcons={setIcons} />
-        <Button onPress={async () => {
+        <Button style={{margin: 24}} labelStyle={{fontSize: theme.fonts.titleMedium.fontSize, padding: 12}} mode="contained"  onPress={async () => {
           await addWelcome(title, text, icons)
           router.back()
         }}>
-          Add this welcome message
+          Add Welcome Message
         </Button>
       </View>
     </PaperProvider>

@@ -98,11 +98,11 @@ export default function EditSurgeryPage() {
             <React.Fragment>
                 <EditSurgery name={name} setName={setName} association={association} setAssociation={setAssociation} 
                 type={type} setType={setType} summary={summary} setSummary={setSummary} considerations={considerations} setConsiderations={setConsiderations}/>
-                <Button onPress={async () => {
+                <Button style={{margin: 24}} labelStyle={{fontSize: theme.fonts.titleMedium.fontSize, padding: 12}} mode="contained" onPress={async () => {
                 await edit(surgery._id, name, association, type, summary, considerations)
                 router.back()
                 }}>
-                Save modifications to this surgery
+                Save Modifications
                 </Button>
             </React.Fragment>
         )}

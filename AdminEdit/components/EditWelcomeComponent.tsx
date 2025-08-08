@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, View } from "react-native";
+import { Linking, ScrollView, View } from "react-native";
 import {
   TextInput,
   List,
@@ -29,36 +29,48 @@ export default function EditWelcome({title, setTitle, text, setText, icons, setI
     {
       return (
           <List.Section key={index}>
-          <View style={{flexDirection: "row"}}>
-          <List.Subheader>Icon {index+1}</List.Subheader>
-          <IconButton icon="trash-can" onPress={ () => {
-                const newIcons = icons.filter((_, indexInArray) => indexInArray !== index);
-                setIcons(newIcons);
-          }}/>
-          </View>
-          <View style={{flexDirection: "row"}}>
-            <TextInput label="Icon name" mode="outlined" value={icons[index]} onChangeText={newValue => {
+          <View style={{flexDirection: "row", alignItems: "center"}}>
+            <IconButton icon="trash-can" size={32} iconColor={theme.colors.error} onPress={ () => {
+                  const newIcons = icons.filter((_, indexInArray) => indexInArray !== index);
+                  setIcons(newIcons);
+            }} />
+            <TextInput label={`Icon ${index+1}`} mode="outlined" value={icons[index]} onChangeText={newValue => {
                 const newIcons = [...icons];
                 newIcons[index] = newValue
                 setIcons(newIcons);
             }}/>
-            <Icon source={icon} size={32} color={theme.colors.secondary}/>
+            <View style={{marginLeft: 16}}>
+              <Icon source={icon} size={40} color={theme.colors.secondary}/>
+            </View>
           </View>
           </List.Section>
       )
     })
 
   return (
-    <ScrollView style={{ marginBottom: insets.bottom }}>
-        <Text variant="labelLarge">Title of welcome.</Text>
-        <TextInput label="Title" mode="outlined" value={title} onChangeText={title => setTitle(title)}/>
-        <Text variant="labelLarge">Contents of welcome. This can be formatted using markdown (https://www.markdownguide.org/basic-syntax/).</Text>
-        {/* <MarkdownTextInput value={text} onChangeText={setText} parser={parseExpensiMark} multiline={true}/> */}
-        <Text variant="labelLarge">Icons - you can optionally include icons in the welcome message, which will appear below the text. Put the name of the icon here to see a preview. Icons can be found at https://pictogrammers.com/library/mdi/</Text>
+    <ScrollView style={{ marginBottom: insets.bottom , padding: 24}}>
+        <TextInput label="Title" mode="outlined" value={title} onChangeText={title => setTitle(title)} style={{marginBottom: 20}}/>
+        <Text variant="labelLarge">Contents of welcome</Text>
+        <Text variant="labelMedium">This can be formatted using markdown (
+          <Text onPress={() => Linking.openURL("https://www.markdownguide.org/basic-syntax/")}
+            style={{color: theme.colors.primary}}>
+            https://www.markdownguide.org/basic-syntax/
+          </Text>
+        )
+          </Text>
+        {/* <MarkdownTextInput value={text} onChangeText={setText} parser={parseExpensiMark} multiline={true}/> style={{marginBottom: 20}}*/}
+        <Text variant="labelLarge">Icons</Text>
+        <Text variant="labelMedium">You can optionally include icons in the welcome message. They will appear below the text. 
+          <br/>
+          Press the <Text style={{color: theme.colors.primary, fontWeight: 'bold'}}>Add Icon</Text> button to add a new icon.
+          <br/>
+          Names of icons can be found at <Text onPress={() => Linking.openURL("https://www.markdownguide.org/basic-syntax/")}
+            style={{color: theme.colors.primary}}>https://pictogrammers.com/library/mdi/</Text>, and icons can be previewed by filling in their names.
+            </Text>
         <Button onPress={() => {
         const newIcons = [...icons, ""];
         setIcons(newIcons);
-        }}>
+        }} mode="contained-tonal" style={{marginVertical: 16}} >
         Add Icon
         </Button>
         {iconElements}

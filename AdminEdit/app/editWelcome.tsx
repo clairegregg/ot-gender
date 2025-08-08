@@ -84,7 +84,7 @@ export default function EditSurgeryPage() {
           ) : (
             <React.Fragment>
                 <EditWelcome title={title} setTitle={setTitle} text={text} setText={setText} icons={icons} setIcons={setIcons} />
-                <Button onPress={async () => {
+                <Button style={{margin: 24}} labelStyle={{fontSize: theme.fonts.titleMedium.fontSize, padding: 12}} mode="contained" onPress={async () => {
                 await edit(welcome._id, title, text, icons)
                 router.back()
                 }}>

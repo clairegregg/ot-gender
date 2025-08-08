@@ -34,11 +34,11 @@ export default function NewSurgery() {
       
         <EditSurgery name={name} setName={setName} association={association} setAssociation={setAssociation} 
           type={type} setType={setType} summary={summary} setSummary={setSummary} considerations={considerations} setConsiderations={setConsiderations}/>
-        <Button onPress={async () => {
+        <Button style={{margin: 24}} labelStyle={{fontSize: theme.fonts.titleMedium.fontSize, padding: 12}} mode="contained" onPress={async () => {
           await addSurgery(name, association, type, summary, considerations)
           router.back()
         }}>
-          Add this surgery
+          Add Surgery
         </Button>
       </View>
     </PaperProvider>

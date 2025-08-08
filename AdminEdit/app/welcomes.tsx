@@ -1,4 +1,3 @@
-import { Surgery } from "@/components/Surgery";
 import { Welcome } from "@/components/Welcome";
 import { useFocusEffect, useRouter } from "expo-router";
 import React from "react";
@@ -7,9 +6,9 @@ import {
   PaperProvider,
   Appbar,
   ActivityIndicator,
-  useTheme,
   Text,
-  MD3LightTheme
+  MD3LightTheme,
+  Divider
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -67,13 +66,14 @@ export default function Welcomes() {
               <ActivityIndicator size="large" />
             </View>
           ) : (
-            <ScrollView style={{ marginBottom: insets.bottom }}>
-              <Text>{`
-                  These are the welcome messages displayed when a user first launches the app, labelled here by their titles.
+            <ScrollView style={{ marginBottom: insets.bottom, padding: 24 }}>
+              <Text variant="bodyLarge">{`
+These are the welcome messages displayed when a user first launches the app, labelled by their titles.
 
-                  These are displayed to the user in the order shown here.
+These are displayed to the user in the order shown here:
               `}
               </Text>
+              <Divider/>
               {welcomeElements}
             </ScrollView>
           )}
