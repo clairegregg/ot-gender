@@ -114,7 +114,7 @@ export const createRoutes = (db: Db): Router => {
   router.get('/welcome/:id', async (req: Request, res: Response) => {
     try {
       const { id } = req.params;
-      const welcome = await db.collection('welcome').findOne({
+      const welcome = await db.collection('welcomes').findOne({
         _id: new ObjectId(id),
       });
       res.json(welcome);
