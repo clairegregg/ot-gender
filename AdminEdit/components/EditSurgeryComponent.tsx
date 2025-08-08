@@ -5,6 +5,8 @@ import {
   List,
   Button,
   IconButton,
+  Portal,
+  Snackbar,
 } from 'react-native-paper';
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 // import {MarkdownTextInput, parseExpensiMark} from '@expensify/react-native-live-markdown';
@@ -16,7 +18,7 @@ export type consideration = {
   contents: string
 }
 
-function emptyConsideration(): consideration {
+export function emptyConsideration(): consideration {
   return {
     title: "",
     short_title: "",
@@ -39,44 +41,61 @@ interface EditSurgeryProps {
 
 export default function EditSurgery({name, setName, association, setAssociation, type, setType, summary, setSummary, considerations, setConsiderations}: EditSurgeryProps) {
   const insets = useSafeAreaInsets();
+  const [visible, setVisible] = React.useState(false);
 
   let considerationElements = considerations.map((_, index) =>
   {
-    return <List.Section key={index}>
-      <View style={{flexDirection: "row"}}>
-      <List.Subheader>Consideration {index+1}</List.Subheader>
-      <IconButton icon="trash-can" onPress={ () => {
-        const newConsiderations = considerations.filter((_, indexInArray) => indexInArray !== index);
-        setConsiderations(newConsiderations);
-      }}/>
-      </View>
-      <TextInput label="Title" mode="outlined" value={considerations[index].title} onChangeText={title => {
-        const newConsiderations = [...considerations];
-        newConsiderations[index] = {
-          ...newConsiderations[index],
-          title: title,
-        };  
-        setConsiderations(newConsiderations);
-        console.log(`Title updated, so ${JSON.stringify(considerations)}`)
-      }}/>
-      <TextInput label="Short Title" mode="outlined" value={considerations[index].short_title} onChangeText={short_title => {
-        const newConsiderations = [...considerations];
-        newConsiderations[index] = {
-          ...newConsiderations[index],
-          short_title: short_title,
-        };  
-        setConsiderations(newConsiderations);
-        console.log(`Short title updated, so ${JSON.stringify(considerations)}`)
-      }}/>
-      {/* <MarkdownTextInput value={considerations[index].contents} parser={parseExpensiMark} multiline={true} onChangeText={ contents => {
-        const newConsiderations = [...considerations];
-        newConsiderations[index] = {
-          ...newConsiderations[index],
-          contents: contents,
-        };  
-        setConsiderations(newConsiderations);
-      }} /> */}
-    </List.Section>
+    return (
+    <React.Fragment>
+        <Portal>
+            <Snackbar visible={visible} onDismiss={() => setVisible(false)} action={{
+                label: "OK",
+                onPress: () => {
+                    setVisible(false)
+                }
+            }}>
+                Minimum one consideration is required!
+            </Snackbar>
+        </Portal>
+        <List.Section key={index}>
+        <View style={{flexDirection: "row"}}>
+        <List.Subheader>Consideration {index+1}</List.Subheader>
+        <IconButton icon="trash-can" onPress={ () => {
+            if (considerations.length == 1) {
+                setVisible(true)
+            } else {
+                const newConsiderations = considerations.filter((_, indexInArray) => indexInArray !== index);
+                setConsiderations(newConsiderations);
+            }
+        }}/>
+        </View>
+        <TextInput label="Title" mode="outlined" value={considerations[index].title} onChangeText={title => {
+            const newConsiderations = [...considerations];
+            newConsiderations[index] = {
+            ...newConsiderations[index],
+            title: title,
+            };  
+            setConsiderations(newConsiderations);
+        }}/>
+        <TextInput label="Short Title" mode="outlined" value={considerations[index].short_title} onChangeText={short_title => {
+            const newConsiderations = [...considerations];
+            newConsiderations[index] = {
+            ...newConsiderations[index],
+            short_title: short_title,
+            };  
+            setConsiderations(newConsiderations);
+        }}/>
+        {/* <MarkdownTextInput value={considerations[index].contents} parser={parseExpensiMark} multiline={true} onChangeText={ contents => {
+            const newConsiderations = [...considerations];
+            newConsiderations[index] = {
+            ...newConsiderations[index],
+            contents: contents,
+            };  
+            setConsiderations(newConsiderations);
+        }} /> */}
+        </List.Section>
+    </React.Fragment>
+    )
   })
 
 
@@ -89,7 +108,6 @@ export default function EditSurgery({name, setName, association, setAssociation,
         <Button onPress={() => {
         const newConsiderations = [...considerations, emptyConsideration()];
         setConsiderations(newConsiderations);
-        console.log(`New consideration added, so ${JSON.stringify(considerations)}`)
         }}>
         Add OT Consideration
         </Button>

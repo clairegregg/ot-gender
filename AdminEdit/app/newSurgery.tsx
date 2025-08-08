@@ -7,7 +7,7 @@ import {
   Button,
   useTheme,
 } from 'react-native-paper';
-import EditSurgery, {consideration} from "@/components/EditSurgeryComponent";
+import EditSurgery, {consideration, emptyConsideration} from "@/components/EditSurgeryComponent";
 
 
 const url = 'https://backend.aisling.clairegregg.com/surgery'; 
@@ -21,7 +21,7 @@ export default function NewSurgery() {
   const [association, setAssociation] = React.useState("");
   const [type, setType] = React.useState("");
   const [summary, setSummary] = React.useState("");
-  const [considerations, setConsiderations] = React.useState<consideration[]>([]);
+  const [considerations, setConsiderations] = React.useState<consideration[]>([emptyConsideration()]);
   
   return (
     <PaperProvider>
