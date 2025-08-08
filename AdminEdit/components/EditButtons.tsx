@@ -1,5 +1,5 @@
 
-import { useRouter } from 'expo-router';
+import { Router, useRouter } from 'expo-router';
 import * as React from 'react';
 import { Alert, Platform, View } from 'react-native';
 import { Card, IconButton, List, Text, TouchableRipple, useTheme } from 'react-native-paper';
@@ -59,10 +59,21 @@ async function DeleteItem(database: string, item: any, refresh: () => void){
   }
 }
 
+function EditItem(router: Router, database: string, item: any) {
+    if (database === "welcome") {
+        // Logic for editing welcome
+    } else {
+        router.navigate(`/editSurgery?id=${item._id}`)
+    }
+}
+
 export function EditButtons({database, item, refresh}: EditProps) {
+    const router = useRouter()
     return (
         <View style={{flexDirection: 'row'}}>
-            <IconButton icon="pencil"/>
+            <IconButton icon="pencil" onPress={() => {
+                EditItem(router, database, item)
+            }}/>
             <IconButton icon="trash-can" onPress={() => {
                 DeleteItem(database, item, refresh)
             }}/>

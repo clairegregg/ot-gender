@@ -13,7 +13,7 @@ import EditSurgery, {consideration} from "@/components/EditSurgeryComponent";
 const url = 'https://backend.aisling.clairegregg.com/surgery'; 
 
 
-export default function Surgeries() {
+export default function NewSurgery() {
   const router = useRouter()
   const theme = useTheme()
 
@@ -46,6 +46,7 @@ export default function Surgeries() {
 
 async function addSurgery(name: string, primary_association: string, type: string, summary: string, considerations: consideration[]) {
   let jsonConsiderations: any[] = []
+  console.log(`considerations pre json are ${JSON.stringify(considerations)}`)
   for (let consideration of considerations){
     jsonConsiderations.push(
       {
@@ -55,6 +56,7 @@ async function addSurgery(name: string, primary_association: string, type: strin
       }
     )
   }
+  console.log(`considerations post json are ${JSON.stringify(considerations)}`)
   await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -63,7 +65,7 @@ async function addSurgery(name: string, primary_association: string, type: strin
       primary_association: primary_association,
       type: type,
       summary: summary,
-      considerations: jsonConsiderations
+      ot_considerations: jsonConsiderations
     }),
   });
 }

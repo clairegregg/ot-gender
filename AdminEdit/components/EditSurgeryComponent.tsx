@@ -42,7 +42,7 @@ export default function EditSurgery({name, setName, association, setAssociation,
 
   let considerationElements = considerations.map((_, index) =>
   {
-    return <List.Section>
+    return <List.Section key={index}>
       <View style={{flexDirection: "row"}}>
       <List.Subheader>Consideration {index+1}</List.Subheader>
       <IconButton icon="trash-can" onPress={ () => {
@@ -57,6 +57,7 @@ export default function EditSurgery({name, setName, association, setAssociation,
           title: title,
         };  
         setConsiderations(newConsiderations);
+        console.log(`Title updated, so ${JSON.stringify(considerations)}`)
       }}/>
       <TextInput label="Short Title" mode="outlined" value={considerations[index].short_title} onChangeText={short_title => {
         const newConsiderations = [...considerations];
@@ -65,6 +66,7 @@ export default function EditSurgery({name, setName, association, setAssociation,
           short_title: short_title,
         };  
         setConsiderations(newConsiderations);
+        console.log(`Short title updated, so ${JSON.stringify(considerations)}`)
       }}/>
       {/* <MarkdownTextInput value={considerations[index].contents} parser={parseExpensiMark} multiline={true} onChangeText={ contents => {
         const newConsiderations = [...considerations];
@@ -87,6 +89,7 @@ export default function EditSurgery({name, setName, association, setAssociation,
         <Button onPress={() => {
         const newConsiderations = [...considerations, emptyConsideration()];
         setConsiderations(newConsiderations);
+        console.log(`New consideration added, so ${JSON.stringify(considerations)}`)
         }}>
         Add OT Consideration
         </Button>
