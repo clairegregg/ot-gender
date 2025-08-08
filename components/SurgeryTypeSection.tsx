@@ -12,7 +12,7 @@ export default function SurgeryTypeSection({title, list}: SurgeryTypeSectionProp
     let surgeryTypes = list.map((surgeryText) =>
     {
         return (
-            <SurgeryType title={surgeryText.name} type={surgeryText.type} key={surgeryText.name}/>
+            <SurgeryType title={surgeryText.name} _id={surgeryText._id} type={surgeryText.type} key={surgeryText.name}/>
         )
     });
 
