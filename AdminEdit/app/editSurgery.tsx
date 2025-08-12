@@ -130,7 +130,7 @@ async function edit(id: string, name: string, primary_association: string, type:
       primary_association: primary_association,
       type: type,
       summary: summary,
-      considerations: jsonConsiderations
+      ot_considerations: jsonConsiderations
     }),
   });
 }
