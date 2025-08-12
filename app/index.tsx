@@ -11,7 +11,8 @@ import {
   MD3LightTheme as DefaultTheme,
   PaperProvider,
   Appbar,
-  ActivityIndicator
+  ActivityIndicator,
+  Text
 } from 'react-native-paper';
 import SurgeryTypeSection from '@/components/SurgeryTypeSection';
 import { IntroDialogue } from '@/components/IntroDialogue';
@@ -100,6 +101,23 @@ export default function Index() {
           <React.Fragment>
           <IntroDialogue visible={dialogueVisible} setVisible={setDialogueVisible} welcomes={welcomes} />
           <ScrollView style={{ marginBottom: insets.bottom }}>
+            <View style={{padding: 24}}>
+            <Text variant="bodyLarge">
+              Going through the surgical process will involve changes/disruptions to your personal routines and you are likely to have to manage changes and uncertainties throughout the process. 
+
+              <br/>
+              <br/>
+              This app contains things to consider about the surgical process and how your day-to-day life/functioning will change. It also presents some strategies and suggestions to support you to manage these tasks/activities/occupations as independently as possible. However, it is still important to have a support person throughout this process, so consider sharing this resource with your support person. You can also use it to facilitate conversations with your support person about things to consider both pre- and post- surgery. Caregiver support is encouraged, depending on your desired level of independence.
+
+              <br/>
+              <br/>
+              Many gender-affirming surgeries are not available in Ireland, so require travel to another country. This can present different challenges for different people, but many challenges can be overcome with sufficient planning and support from those around you, including the team at the NGS. This app contains information and strategies to support planning, organisation, time management, managing change, and more. If you feel you need more personalised support with any of the areas addressed in this app, please contact the service and referral to occupational therapy or another suitable profession can be discussed.
+
+              <br/>
+              <br/>
+              With all of the content in this app, please consider guidelines from your surgical team first and foremost. Many of the strategies in this app can be adapted to various situations – if you require any support with this, please contact the service and referral to occupational therapy or another suitable profession can be discussed.
+            </Text>
+            </View>
             {surgeryTypeSections}
           </ScrollView>
           </React.Fragment>
